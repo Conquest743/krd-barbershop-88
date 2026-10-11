@@ -1,0 +1,5 @@
+import {business as raw,Call,HeroImage,Quote,Reveal,ContactMap,Footer} from './components';
+import full from './business.json';
+const b={...raw,tagline:full.tagline};
+function ServiceLines(){return <ul className="service-lines">{full.services.map(s=><li key={s}>{s}</li>)}</ul>}
+export default function App(){return <div className="wrap"><header><a className="brand" href="#top">{b.name}</a><div className="header-right"><nav aria-label="Навигация"><a href="#reviews">Отзывы</a><a href="#contact">Адрес и часы</a></nav><Call>Позвонить</Call></div></header><main id="top"><div className="hero hero-88"><div className="hero-copy"><h1>Барбершоп<br/><span>88</span></h1><p>{b.tagline}</p><Call>Позвонить и записаться</Call></div><HeroImage/></div><div id="reviews"><section className="precision"><h2>Ваш образ.<br/>Внимание к деталям.</h2><div><p>В отзывах гости отмечают аккуратную работу и то, как мастер слушает пожелания.</p><ServiceLines/><a href="https://dikidi.ru/416509" target="_blank" rel="noreferrer">Открыть запись в Dikidi</a></div></section><Reveal><Quote/></Reveal></div><ContactMap/></main><Footer/></div>}
